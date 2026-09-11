@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সিস্টেম আপডেট চলছে - স্লিম বাটন</title>
+    <style>
+        /* নিয়ন গ্লো কালার প্যালেট */
+        :root {
+            --neon-color: #00ffc8; /* উজ্জ্বল সায়ান/সবুজ */
+            --dark-bg: #0a0a0a; /* গভীর কালো ব্যাকগ্রাউন্ড */
+            --card-bg: #1a1a1a; /* কার্ডের জন্য গাঢ় ধূসর */
+            --secondary-color: #ff33ff; /* সহায়ক নিয়ন ম্যাজেন্টা */
+            --text-color: #e0e0e0; /* হালকা টেক্সট */
+        }
+
+        /* ফন্ট ও ডার্ক ব্যাকগ্রাউন্ড */
+        body {
+            font-family: 'Consolas', 'Courier New', monospace;
+            text-align: center;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* মূল কন্টেইনার - গ্লোয়িং বর্ডার */
+        .container {
+            background-color: var(--card-bg);
+            padding: 50px 30px;
+            border-radius: 12px;
+            border: 2px solid var(--neon-color);
+            box-shadow: 0 0 30px rgba(0, 255, 200, 0.5), 0 0 10px var(--neon-color) inset;
+            max-width: 450px;
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* হেডিং - নিয়ন গ্লো */
+        h1 {
+            color: var(--neon-color);
+            margin-bottom: 50px;
+            font-size: 2.2em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--neon-color), 0 0 20px rgba(0, 255, 200, 0.8);
+            animation: neon-pulse 3s infinite alternate;
+        }
+
+        /* বাটন এরিয়া */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* বাটনের মধ্যে দূরত্ব সামান্য কমানো হলো */
+        }
+
+        /* বাটন স্টাইল */
+        .button {
+            display: inline-block;
+            /* **এখানে পরিবর্তন:** প্যাডিং কমানো হলো */
+            padding: 12px 20px; 
+            text-decoration: none;
+            border-radius: 6px; /* সামান্য কম রাউন্ডেড */
+            /* **এখানে পরিবর্তন:** ফন্ট সাইজ কমানো হলো */
+            font-size: 1em; 
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 0 2px var(--neon-color);
+        }
+
+        /* টেলিগ্রাম বাটন - নিয়ন স্টাইল */
+        .telegram-button {
+            background-color: transparent;
+            color: var(--neon-color);
+            border: 2px solid var(--neon-color);
+            text-shadow: 0 0 5px var(--neon-color);
+        }
+
+        .telegram-button:hover {
+            background-color: var(--neon-color);
+            color: var(--dark-bg);
+            border-color: var(--neon-color);
+            transform: scale(1.03); /* স্কেল সামান্য কম করা হলো */
+            box-shadow: 0 0 15px var(--neon-color), 0 0 30px rgba(0, 255, 200, 0.7);
+        }
+
+        /* সাপোর্ট বাটন - বিকল্প নিয়ন স্টাইল */
+        .support-button {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+            text-shadow: 0 0 5px var(--secondary-color);
+        }
+
+        .support-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-bg);
+            border-color: var(--secondary-color);
+            transform: scale(1.03);
+            box-shadow: 0 0 15px var(--secondary-color), 0 0 30px rgba(255, 51, 255, 0.7);
+        }
+
+        /* অ্যানিমেশন - ব্লিঙ্কিং নিয়ন গ্লো */
+        @keyframes neon-pulse {
+            0% {
+                text-shadow: 0 0 10px var(--neon-color), 0 0 20px rgba(0, 255, 200, 0.5);
+                opacity: 0.9;
+            }
+            100% {
+                text-shadow: 0 0 15px var(--neon-color), 0 0 30px rgba(0, 255, 200, 0.9);
+                opacity: 1;
+            }
+        }
+
+        /* মোবাইলের জন্য */
+        @media (max-width: 500px) {
+            .container {
+                padding: 30px 15px;
+            }
+            h1 {
+                font-size: 1.7em;
+            }
+            .button {
+                padding: 10px 15px; /* মোবাইলের জন্য আরও ছোট */
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💥হ্যাক'টি আপডেট হচ্ছে! আপডেট হ্যাক নিতে চ্যানেলে জয়েন করুন💥</h1>
+
+        <div class="button-group">
+            <a href="https://t.me/+guNEhvnGLjczNThl" target="_blank" class="button telegram-button">
+                𝐉𝐎𝐈𝐍 𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐌
+            </a>
+
+            <a href="https://t.me/Mod_Expert_File" class="button support-button">
+                𝐉𝐎𝐈𝐍 𝐇𝐀𝐂𝐊 𝐅𝐈𝐋𝐄
+            </a>
+        </div>
+    </div>
+</body>
+</html>
